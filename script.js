@@ -114,6 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 顯示結果
         resultsSection.style.display = 'block';
+    
+        // 新增滚动效果
+        resultsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' // 将结果区块顶部对齐视口顶部
+        });
     });
     
     function updateRadarChart(demand, price, quantity, frequency, time) {

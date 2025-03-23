@@ -106,11 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             copyrightElement.className = 'copyright';
             resultsSection.appendChild(copyrightElement);
         }
-        copyrightElement.innerHTML = `
-            <p style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
-                DMM創業者動能模型由「創業導師阿金」設計，這個網頁是 Soking 所製作 © 2025 All Rights Reserved.
-            </p>
-        `;
+    
         
         // 顯示結果
         resultsSection.style.display = 'block';

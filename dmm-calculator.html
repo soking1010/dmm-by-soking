@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMM創業者動能模型計算機</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- 移除 chartjs-gauge 插件 -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- 保持原有的 HTML 結構，移除 style 和 script 標籤 -->
+    <h1>DMM創業者動能模型計算機</h1>
+    
+    <div class="model-intro">
+        <p>DMM創業者動能模型是一個幫助創業者評估商業機會的工具。它從市場需求和個人特質兩個維度，綜合分析創業項目的潛力。通過評估市場需求元素（DPQFT）和生活意義元素（LGPN），為您提供量化的決策參考。</p>
+    </div>
+    
+    <div class="card">
+        <div class="user-info">
+            <div class="input-group">
+                <label for="user-name">姓名</label>
+                <input type="text" id="user-name" placeholder="請輸入您的姓名">
+            </div>
+            <div class="input-group">
+                <label for="user-industry">創業賽道</label>
+                <input type="text" id="user-industry" placeholder="例如：顧問業 / UX 顧問">
+            </div>
+        </div>
+        <!-- 原有的輸入表單結構 -->
+        <div class="input-container">
+            <div class="section">
+                <h2>市場需求元素</h2>
+                
+                <div class="slider-container">
+                    <label class="slider-label">D 需求</label>
+                    <div class="slider-description">市場對產品或服務的渴望程度，數值越高代表需求越強烈</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="demand" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label class="slider-label">P 價格</label>
+                    <div class="slider-description">產品或服務的定價水平，數值越高代表價格越高</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="price" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label class="slider-label">Q 數量</label>
+                    <div class="slider-description">可能的市場規模，數值越高代表潛在客戶數量越多</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="quantity" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label class="slider-label">F 頻率</label>
+                    <div class="slider-description">客戶購買或使用的頻率，數值越高代表使用頻率越高</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="frequency" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label class="slider-label">T 時間</label>
+                    <div class="slider-description">達到目標所需時間，數值越高代表所需時間越長</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="time" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Ikigai 生活的意義元素</h2>
+                
+                <div class="slider-container">
+                    <label class="slider-label">L 熱愛</label>
+                    <div class="slider-description">對這件事的熱情程度，數值越高代表越熱愛</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="love" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label class="slider-label">G 擅長</label>
+                    <div class="slider-description">在這領域的專業程度，數值越高代表越擅長</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="good" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label class="slider-label">P 獲利</label>
+                    <div class="slider-description">可能獲得的經濟回報，數值越高代表獲利潛力越大</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="profit" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <label class="slider-label">N 社會價值</label>
+                    <div class="slider-description">對社會的貢獻程度，數值越高代表社會價值越大</div>
+                    <div class="slider-wrapper">
+                        <input type="range" id="need" min="1" max="10" value="5">
+                        <div class="range-values">
+                            <span>1</span>
+                            <span>5</span>
+                            <span>10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="calculate-btn">計算動能分數</button>
+        </div>
+    </div>
+    
+    <div id="results" class="results">
+        <h2>計算結果</h2>
+        
+        <!-- 添加用戶資訊顯示區 -->
+        <div id="user-info" class="user-details"></div>
+        
+        <div class="score-display">
+            <div class="score-item">
+                <span id="score-value" class="score-value">1900</span>
+                <span class="score-label">你的創業家動能分數為</span>
+            </div>
+            
+            <div class="score-item">
+                <div class="gauge-container">
+                    <canvas id="grade-gauge"></canvas>
+                    <div id="grade-value" class="grade-value"></div>
+                    <div class="grade-title">動能等級</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3 class="strategy-text" id="strategy-text">建議策略: 謹慎投入，考慮是否值得長期投資</h3>
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-section">
+                <h3>市場需求元素</h3>
+                <div class="chart-box">
+                    <canvas id="radar-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-section">
+                <h3>Ikigai 生活的意義元素</h3>
+                <div class="chart-box">
+                    <canvas id="ikigai-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <button id="download-btn" class="download-btn">下載分析結果</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- 熱愛圓 -->
+    <circle cx="200" cy="150" r="100" fill="#FFF1A8" fill-opacity="0.6"/>
+    <!-- 擅長圓 -->
+    <circle cx="150" cy="250" r="100" fill="#D3F185" fill-opacity="0.6"/>
+    <!-- 獲利圓 -->
+    <circle cx="200" cy="300" r="100" fill="#A8EDE1" fill-opacity="0.6"/>
+    <!-- 需求圓 -->
+    <circle cx="250" cy="250" r="100" fill="#FFCBC2" fill-opacity="0.6"/>
+    <!-- 中心 Ikigai -->
+    <circle cx="200" cy="220" r="30" fill="#A6AC36"/>
+</svg>
